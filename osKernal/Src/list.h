@@ -23,8 +23,8 @@ pnode_t Node_Create(void*item);
 
 void Node_Append(pnode_t head, pnode_t node);
 
-pnode_t Node_Insert(pnode_t node);
+void Node_Insert(pnode_t lastNode,pnode_t node);
 
-pnode_t Node_Delete(pnode_t node);
+pnode_t Node_Delete(pnode_t head,pnode_t node);
 
 #endif // !_MOS_LIST_

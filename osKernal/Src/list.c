@@ -34,9 +34,16 @@ void Node_Append(pnode_t head, pnode_t node)
     }
 }
 
-void Node_Insert(pnode_t lastNode)
+void Node_Insert(pnode_t lastNode,pnode_t node)
 {
-    
+    pnode_t tempNode = lastNode->next;
+    lastNode->next = node;
+    node->next = tempNode;
 }
 
-pnode_t Node_Delete(pnode_t node);
+pnode_t Node_Delete(pnode_t head,pnode_t node){
+    pnode_t tempNode; 
+    for (pnode_t index = head; index->next != node; index=index->next)
+        tempNode = index;
+    tempNode->next = node->next;   
+}
