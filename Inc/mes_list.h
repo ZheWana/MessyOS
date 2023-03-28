@@ -12,14 +12,12 @@
 #ifndef _MOS_LIST_
 #define _MOS_LIST_
 
-#include "stdint.h"
-
 typedef struct nodeTypedef{
     void *item;
     struct nodeTypedef* next;
 }node_t,*pnode_t ;
 
-pnode_t Node_Create(void*item);
+pnode_t Node_Create(void* item);
 
 void Node_Append(pnode_t head, pnode_t node);
 

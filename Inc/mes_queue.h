@@ -17,15 +17,17 @@
 typedef pnode_t qItem_t;
 
 typedef struct QueueTypeDef {
-    qItem_t entry;
-    qItem_t exit;
-    int len;
+    qItem_t entry;  // head of queue(tail of list)
+    qItem_t exit;   // tail of queue(head of list)
+    int len;        // length of queue
 } queue_t, *pQueue_t;
+
+#define Queue_elementFree(qItem_t) Node_Free(qItem_t)
 
 pQueue_t Queue_create(void);
 
 int Queue_in(pQueue_t queue, qItem_t item);
 
-qItem_t Queue_out(pQueue_t queue);
+int Queue_out(pQueue_t queue);
 
 #endif // !_MOS_QUEUE_
