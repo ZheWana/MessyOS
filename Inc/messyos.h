@@ -16,7 +16,6 @@
 typedef enum MOS_Status {
     MOS_OK = 0,
     MOS_Error = 1,
-
 } MOS_Status;
 
 typedef enum MOS_TaskState {
@@ -27,9 +26,6 @@ typedef enum MOS_TaskState {
 } MOS_TaskState;
 
 typedef struct mosTask_t {
-    struct mosTask_t* last;
-    struct mosTask_t* next;
-
     MOS_TaskState state;
 
     uint8_t priority;

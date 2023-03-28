@@ -12,15 +12,18 @@
 #include "messyos.h"
 #include "mes_sys.h"
 #include "mes_systick.h"
+#include "mes_list.h"
 
 #include "stdlib.h"
 
 static struct MessyOS {
-    mosTask_t* taskListHead; // 任务链表头
-    mosTask_t* taskListTail; // 任务链表尾
-    mosTask_t* RdyListHead; // 任务就绪链表头
-    mosTask_t* RdyListTail; // 任务就绪链表尾
-    mosTask_t* RunningTask; // 运行任务指针
+    pnode_t RdyListHead; // 任务就绪链表头
+    pnode_t RdyListTail; // 任务就绪链表尾
+    pnode_t BlockListHead; // 任务就绪链表头
+    pnode_t BlockListTail; // 任务就绪链表尾
+    pnode_t TerListHead; // 任务就绪链表头
+    pnode_t TerListTail; // 任务链表尾
+    pnode_t RunningTask; // 运行任务指针
 
     uint8_t isKernalOK : 1;
 } MessyOS;
