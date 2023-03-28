@@ -50,3 +50,9 @@ pnode_t Node_Delete(pnode_t head,pnode_t node){
 
     return node;
 }
+
+void Node_Free(pnode_t node){
+    if(node != NULL){
+        free(node);
+    }
+}
