@@ -10,3 +10,14 @@
  */
 
 
+pQueue_t Queue_create(void){
+
+}
+
+int Queue_in(pQueue_t queue, qItem_t item){
+
+}
+
+qItem_t Queue_out(pQueue_t queue){
+    
+}
