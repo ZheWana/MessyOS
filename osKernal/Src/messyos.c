@@ -31,7 +31,9 @@ uint8_t IsOSReady(void)
 }
 
 //---------------------  MessyOS Kernal Functions  --------------------//
-
+/**
+ * @brief 
+ */
 extern void MOS_SetSP(uint32_t);
 
 void MOS_osStart(void)
