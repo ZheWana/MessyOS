@@ -28,10 +28,10 @@ int Queue_in(pQueue_t queue, void* item)
     
     // First element in queue
     if (queue->entry == NULL && queue->exit == NULL)
-        queue->entry = queue->exit = item;
+        queue->entry = queue->exit = tempNode;
     else { // Other elements in queue
-        List_Append(queue->entry, item);
-        queue->entry = item;
+        tempNode->next = queue->entry;
+        queue->entry = tempNode;
     }
     
     return ++queue->len;

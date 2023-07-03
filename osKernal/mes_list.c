@@ -49,8 +49,9 @@ void List_Append(pnode_t head, pnode_t node)
 {
     if (head->next != NULL) {
         pnode_t tail;
-        for (pnode_t index = head; index == NULL; index = index->next)
-            tail = index;
+        while (tail->next != NULL)
+            tail = tail->next;
+        
         tail->next = node;
     } else {
         head->next = node;
@@ -75,14 +76,14 @@ void List_Insert(pnode_t lastNode,pnode_t node)
  * 
  * @param head 链表头指针
  * @param node 链表节点指针
- * @return pnode_t 返回删除的链表指针
+ * @return pnode_t 返回被删除节点的上一个节点
  */
 pnode_t List_Delete(pnode_t head,pnode_t node){
-    pnode_t tempNode; 
-    
-    for (pnode_t index = head; index->next != node; index=index->next)
-        tempNode = index;
+    pnode_t tempNode = head; 
+    while(tempNode->next != node)
+        tempNode = tempNode->next;
+
     tempNode->next = node->next;   
 
-    return node;
+    return tempNode;
 }
