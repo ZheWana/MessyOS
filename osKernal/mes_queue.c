@@ -22,27 +22,32 @@ pQueue_t Queue_create(void)
     return tempQueue;
 }
 
-int Queue_in(pQueue_t queue, qItem_t item)
+int Queue_in(pQueue_t queue, void* item)
 {
+    pnode_t tempNode = Node_Create(item);
+    
     // First element in queue
     if (queue->entry == NULL && queue->exit == NULL)
         queue->entry = queue->exit = item;
     else { // Other elements in queue
-        Node_Append(queue->entry, item);
+        List_Append(queue->entry, item);
         queue->entry = item;
     }
     
     return ++queue->len;
 }
 
-int Queue_out(pQueue_t queue)
+void* Queue_out(pQueue_t queue)
 {
+    pnode_t tempNode = queue->exit;
+    void* ret = tempNode->item;
+
     // Last element in queue
-    if (queue->entry == queue.exit)
+    if (queue->entry == queue->exit)
         queue->entry = queue->exit = NULL;
     else { // Other elements in queue
-        queue->exit = Node_Delete(queue->exit, queue->exit);
+        queue->exit = List_Delete(queue->entry, queue->exit);
     }
 
-    return ++queue->len;
+    return ret;
 }

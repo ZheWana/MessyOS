@@ -26,8 +26,8 @@ typedef struct QueueTypeDef {
 
 pQueue_t Queue_create(void);
 
-int Queue_in(pQueue_t queue, qItem_t item);
+int Queue_in(pQueue_t queue, void* item);
 
-int Queue_out(pQueue_t queue);
+void* Queue_out(pQueue_t queue);
 
 #endif // !_MOS_QUEUE_

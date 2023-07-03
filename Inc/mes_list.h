@@ -19,11 +19,11 @@ typedef struct nodeTypedef{
 
 pnode_t Node_Create(void* item);
 
-void Node_Append(pnode_t head, pnode_t node);
-
-void Node_Insert(pnode_t lastNode,pnode_t node);
-
-pnode_t Node_Delete(pnode_t head,pnode_t node);
-
 void Node_Free(pnode_t node);
+
+void List_Append(pnode_t head, pnode_t node);
+
+void List_Insert(pnode_t lastNode,pnode_t node);
+
+pnode_t List_Delete(pnode_t head,pnode_t node);
 #endif // !_MOS_LIST_

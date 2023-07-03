@@ -17,12 +17,12 @@
 #include "stdlib.h"
 
 static struct MessyOS {
-    pnode_t RdyListHead; // 任务就绪链表头
-    pnode_t RdyListTail; // 任务就绪链表尾
-    pnode_t BlockListHead; // 任务就绪链表头
-    pnode_t BlockListTail; // 任务就绪链表尾
-    pnode_t TerListHead; // 任务就绪链表头
-    pnode_t TerListTail; // 任务链表尾
+    pnode_t RdyListHead; // 就绪任务链表头
+    pnode_t RdyListTail; // 就绪任务链表尾
+    pnode_t BlockListHead; // 就绪任务链表头
+    pnode_t BlockListTail; // 就绪任务链表尾
+    pnode_t TerListHead; // 终止任务链表头
+    pnode_t TerListTail; // 终止任务链表尾
     pnode_t RunningTask; // 运行任务指针
 
     uint8_t isKernalOK : 1;
