@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "MessyOS_Tester",
+            "cStandard": "c11",
+            "includePath": [
+                "${workspaceFolder}/Config/Inc",
+                "${workspaceFolder}/Drivers/CMSIS/Device/FM/FM33xx/Include",
+                "${workspaceFolder}/Inc",
+                "${workspaceFolder}/Drivers/FM33LE0xx_FL_Driver/Inc"
+            ]
+        }
+    ],
+    "version": 4
+}
