@@ -9,7 +9,9 @@
 	],
 	"settings": {
 		"C_Cpp.codeAnalysis.clangTidy.checks.disabled": ["*"],
-		"C_Cpp.intelliSenseEngine": "default",
-		"C_Cpp.default.includePath": ["${workspaceFolder}/**", "${workspaceFolder}/../../../../Source/**"],
+		"C_Cpp.default.includePath": [
+			"${workspaceFolder}/**", 
+			"${workspaceFolder}/../../../../Source/**"
+		],
 	}
 }
